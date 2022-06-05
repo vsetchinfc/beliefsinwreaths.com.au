@@ -5,24 +5,6 @@ function buildClient() {
   });
 }
 
-function createProductDetailsComponent(ui, elementId, productId) {
-  ui.createComponent("product", {
-    id: productId,
-    node: document.getElementById(elementId),
-    moneyFormat: getMoneyFormat(),
-    options: getProductDetailsOptions(),
-  });
-}
-
-function createAddToCartButtonComponent(ui, elementId, productId) {
-  ui.createComponent("product", {
-    id: productId,
-    node: document.getElementById(elementId),
-    moneyFormat: getMoneyFormat(),
-    options: getAddToCartButtonOptions(),
-  });
-}
-
 function createFullPageComponent(ui, elementId, productId) {
   ui.createComponent("product", {
     id: productId,
@@ -43,6 +25,21 @@ function createCollectionDetailsComponent(ui, elementId, collectionId) {
 
 function getMoneyFormat() {
   return "%24%7B%7Bamount%7D%7D";
+}
+
+function getButtonOptions() {
+  return {
+    ":hover": {
+      "background-color": "#3F6A73",
+    },
+    "background-color": "#4C8699",
+    ":focus": {
+      "background-color": "#3F6A73",
+    },
+    "border-radius": "40px",
+    "padding-left": "30px",
+    "padding-right": "30px",
+  };
 }
 
 function getProductDetailsOptions() {
@@ -93,135 +90,6 @@ function getProductDetailsOptions() {
   };
 }
 
-function getAddToCartButtonOptions() {
-  return {
-    product: {
-      styles: {
-        product: {
-          "@media (min-width: 601px)": {
-            "max-width": "calc(25% - 20px)",
-            "margin-left": "20px",
-            "margin-bottom": "50px",
-          },
-        },
-        button: {
-          ":hover": {
-            "background-color": "#e00000",
-          },
-          "background-color": "#f90000",
-          ":focus": {
-            "background-color": "#e00000",
-          },
-          "border-radius": "40px",
-          "padding-left": "30px",
-          "padding-right": "30px",
-        },
-        price: {
-          "font-size": "20px",
-          "font-weight": "bold",
-        },
-        variantTitle: {
-          "font-size": "20px",
-          "font-weight": "bold",
-        },
-      },
-      //buttonDestination: "modal",
-      contents: {
-        img: false,
-        title: false,
-        variantTitle: true,
-        price: true,
-        button: true,
-      },
-      width: "100%",
-      layout: "vertical",
-      text: {
-        button: "Add to Cart",
-      },
-      events: {
-        addVariantToCart: function (product) {},
-        updateQuantity: function (product) {},
-        openModal: function (product) {},
-        openOnlineStore: function (product) {},
-        openCheckout: function (product) {},
-      },
-    },
-    productSet: {
-      styles: {
-        products: {
-          "@media (min-width: 601px)": {
-            "margin-left": "-20px",
-          },
-        },
-      },
-    },
-    modalProduct: {
-      contents: {
-        img: false,
-        imgWithCarousel: false,
-        button: false,
-        buttonWithQuantity: false,
-      },
-      styles: {
-        product: {
-          "@media (min-width: 601px)": {
-            "max-width": "100%",
-            "margin-left": "0px",
-            "margin-bottom": "0px",
-          },
-        },
-        button: {
-          ":hover": {
-            "background-color": "#e00000",
-          },
-          "background-color": "#f90000",
-          ":focus": {
-            "background-color": "#e00000",
-          },
-          "border-radius": "40px",
-          "padding-left": "30px",
-          "padding-right": "30px",
-        },
-      },
-      text: {
-        button: "Add to cart",
-      },
-    },
-    option: {},
-    cart: {
-      styles: {
-        button: {
-          ":hover": {
-            "background-color": "#e00000",
-          },
-          "background-color": "#f90000",
-          ":focus": {
-            "background-color": "#e00000",
-          },
-          "border-radius": "40px",
-        },
-      },
-      text: {
-        total: "Subtotal",
-        button: "Checkout",
-      },
-    },
-    toggle: {
-      styles: {
-        toggle: {
-          "background-color": "#f90000",
-          ":hover": {
-            "background-color": "#e00000",
-          },
-          ":focus": {
-            "background-color": "#e00000",
-          },
-        },
-      },
-    },
-  };
-}
-
 function getFullProductViewOptions() {
   return {
     product: {
@@ -237,18 +105,7 @@ function getFullProductViewOptions() {
         title: {
           "font-size": "26px",
         },
-        button: {
-          ":hover": {
-            "background-color": "#e00000",
-          },
-          "background-color": "#f90000",
-          ":focus": {
-            "background-color": "#e00000",
-          },
-          "border-radius": "40px",
-          "padding-left": "30px",
-          "padding-right": "30px",
-        },
+        button: getButtonOptions(),
         price: {
           "font-size": "18px",
         },
@@ -294,18 +151,7 @@ function getFullProductViewOptions() {
             "margin-bottom": "0px",
           },
         },
-        button: {
-          ":hover": {
-            "background-color": "#e00000",
-          },
-          "background-color": "#f90000",
-          ":focus": {
-            "background-color": "#e00000",
-          },
-          "border-radius": "40px",
-          "padding-left": "30px",
-          "padding-right": "30px",
-        },
+        button: getButtonOptions(),
         title: {
           "font-family": "Helvetica Neue, sans-serif",
           "font-weight": "bold",
@@ -340,11 +186,11 @@ function getFullProductViewOptions() {
       styles: {
         button: {
           ":hover": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
-          "background-color": "#f90000",
+          "background-color": "#4C8699",
           ":focus": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
           "border-radius": "40px",
         },
@@ -353,16 +199,17 @@ function getFullProductViewOptions() {
         total: "Subtotal",
         button: "Checkout",
       },
+      popup: false,
     },
     toggle: {
       styles: {
         toggle: {
-          "background-color": "#f90000",
+          "background-color": "#4C8699",
           ":hover": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
           ":focus": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
         },
       },
@@ -384,11 +231,11 @@ function getCollectionViewOptions() {
         },
         button: {
           ":hover": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
-          "background-color": "#f90000",
+          "background-color": "#4C8699",
           ":focus": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
           "border-radius": "40px",
         },
@@ -444,11 +291,11 @@ function getCollectionViewOptions() {
         },
         button: {
           ":hover": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
-          "background-color": "#f90000",
+          "background-color": "#4C8699",
           ":focus": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
           "border-radius": "40px",
         },
@@ -462,11 +309,11 @@ function getCollectionViewOptions() {
       styles: {
         button: {
           ":hover": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
-          "background-color": "#f90000",
+          "background-color": "#4C8699",
           ":focus": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
           "border-radius": "40px",
         },
@@ -475,16 +322,17 @@ function getCollectionViewOptions() {
         total: "Subtotal",
         button: "Checkout",
       },
+      popup: false,
     },
     toggle: {
       styles: {
         toggle: {
-          "background-color": "#f90000",
+          "background-color": "#4C8699",
           ":hover": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
           ":focus": {
-            "background-color": "#e00000",
+            "background-color": "#3F6A73",
           },
         },
       },
