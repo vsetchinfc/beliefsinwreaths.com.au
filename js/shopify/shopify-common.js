@@ -42,54 +42,6 @@ function getButtonOptions() {
   };
 }
 
-function getProductDetailsOptions() {
-  return {
-    product: {
-      styles: {
-        product: {
-          "@media (min-width: 601px)": {
-            "max-width": "calc(25% - 20px)",
-            "margin-left": "20px",
-            "margin-bottom": "50px",
-          },
-        },
-        button: {},
-        price: {},
-        variantTitle: {},
-      },
-      contents: {
-        img: true,
-        title: true,
-        variantTitle: false,
-        price: false,
-        button: false,
-        options: false,
-      },
-      width: "100%",
-      layout: "vertical",
-      text: {
-        button: "",
-      },
-      events: {},
-    },
-    productSet: {
-      styles: {
-        products: {
-          "@media (min-width: 601px)": {
-            "margin-left": "-20px",
-            display: "none",
-          },
-          display: "none",
-        },
-      },
-    },
-    modalProduct: {},
-    option: {},
-    cart: {},
-    toggle: {},
-  };
-}
-
 function getFullProductViewOptions() {
   return {
     product: {
