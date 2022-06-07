@@ -77,6 +77,7 @@ function getFullProductViewOptions() {
       width: "100%",
       text: {
         button: "Add to cart",
+        outOfStock: "SOLD OUT",
       },
     },
     productSet: {
@@ -254,6 +255,7 @@ function getCollectionViewOptions() {
       },
       text: {
         button: "Add to cart",
+        outOfStock: "SOLD OUT",
       },
     },
     option: {},
