@@ -346,14 +346,21 @@
     <script type="text/javascript">
         const collectionElementId = 'collection-details';
         var collectionDetailsHash = getUrlParameter('collectionDetails', document.URL);
-        var collectionDetailsJSON = atob(collectionDetailsHash);
-        var collectionDetails = JSON.parse(collectionDetailsJSON);
-        var collectionId = collectionDetails.collectionId;
-        var pageTitle = collectionDetails.collectionName;
+        var collectionId;
+        var pageTitle;
+
+        if (collectionDetailsHash === null) {
+            collectionId = '404062929123';
+            pageTitle = 'All Products';
+        } else {
+            var collectionDetailsJSON = atob(collectionDetailsHash);
+            var collectionDetails = JSON.parse(collectionDetailsJSON);
+            collectionId = collectionDetails.collectionId;
+            pageTitle = collectionDetails.collectionName;
+        }
 
         var pageTitleContainer = document.getElementById("page-title");
         pageTitleContainer.innerHTML = pageTitle;
-        // TODO: if collectionDetailsHash not found redirect to 404 page
     </script>
 
     <script src="/js/shopify/shopify-common.js"></script>
