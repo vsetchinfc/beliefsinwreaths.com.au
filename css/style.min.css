@@ -72,7 +72,7 @@ h2 {
 }
 
 a {
-  color: #f34949;
+  color: #4C8699;
 }
 
 button > i {
@@ -88,7 +88,7 @@ button:focus {
 .btn:hover,
 a:hover {
   text-decoration: none;
-  color: #e22104;
+  color: #3F6A73;
 }
 
 .btn-icon {
