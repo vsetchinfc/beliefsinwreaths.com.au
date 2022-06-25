@@ -122,6 +122,14 @@ a:hover {
   }
 }
 
+.img-pay-badge {
+  border: 0.0625rem solid #3F6A73;
+  border-radius: 3px;
+  display: block;
+  height: 2rem;
+  min-width: 2.375rem;
+}
+
 .img-logo {
   height: 200px;
   width: auto;
