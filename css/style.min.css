@@ -130,6 +130,10 @@ a:hover {
   min-width: 2.375rem;
 }
 
+.img-review {
+  max-width: 500px;
+}
+
 .img-logo {
   height: 200px;
   width: auto;
@@ -344,12 +348,12 @@ a:hover {
 /*=================================
 =            TESTIMONY            =
 =================================*/
-#gtco-testimonial {
+/* #gtco-testimonial {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   color: #fff;
-}
+} */
 
 .testi-content {
   text-align: center;
