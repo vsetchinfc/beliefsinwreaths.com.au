@@ -88,7 +88,7 @@ function getFullProductViewOptions() {
               productFreeDeliveryElementId
             );
             freeDeliveryMessageContainer.innerHTML =
-              "This product includes <strong>FREE DELIVERY</strong>!";
+              "This product includes <strong>FREE DELIVERY</strong> Australia wide!";
           }
         },
         beforeInit: function (product) {
