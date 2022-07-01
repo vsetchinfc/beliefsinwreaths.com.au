@@ -79,6 +79,30 @@ function getFullProductViewOptions() {
         button: "Add to cart",
         outOfStock: "SOLD OUT",
       },
+      events: {
+        afterInit: function (product) {
+          debugger;
+          if (product.selectedVariant.price > 95) {
+            var freeDeliveryMessageContainer = document.getElementById(
+              productFreeDeliveryElementId
+            );
+            freeDeliveryMessageContainer.innerHTML =
+              "This product includes <strong>FREE DELIVERY</strong>!";
+          }
+        },
+        beforeInit: function (product) {
+          debugger;
+        },
+        // addVariantToCart: function (product) {},
+        // updateQuantity: function (product) {},
+        openModal: function (product) {
+          // TIP: uncomment line below to see and product id
+          console.log("Product handle: " + product.viewData.id);
+          window.location.href = `/products/product-details.html?productId=${product.viewData.id}`;
+        },
+        // openOnlineStore: function (product) {},
+        // openCheckout: function (product) {},
+      },
     },
     productSet: {
       styles: {
