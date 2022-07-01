@@ -81,7 +81,8 @@ function getFullProductViewOptions() {
       },
       events: {
         afterInit: function (product) {
-          debugger;
+          //debugger;
+          // check free delivery threshold
           if (product.selectedVariant.price > 95) {
             var freeDeliveryMessageContainer = document.getElementById(
               productFreeDeliveryElementId
@@ -91,7 +92,7 @@ function getFullProductViewOptions() {
           }
         },
         beforeInit: function (product) {
-          debugger;
+          //debugger;
         },
         // addVariantToCart: function (product) {},
         // updateQuantity: function (product) {},
