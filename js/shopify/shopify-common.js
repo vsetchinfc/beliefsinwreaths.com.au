@@ -14,12 +14,17 @@ function createFullPageComponent(ui, elementId, productId) {
   });
 }
 
-function createCollectionDetailsComponent(ui, elementId, collectionId) {
+function createCollectionDetailsComponent(
+  ui,
+  elementId,
+  collectionId,
+  showPrice
+) {
   ui.createComponent("collection", {
     id: collectionId,
     node: document.getElementById(elementId),
     moneyFormat: getMoneyFormat(),
-    options: getCollectionViewOptions(),
+    options: getCollectionViewOptions(showPrice),
   });
 }
 
@@ -195,7 +200,7 @@ function getFullProductViewOptions() {
   };
 }
 
-function getCollectionViewOptions() {
+function getCollectionViewOptions(showPrice) {
   return {
     product: {
       styles: {
@@ -221,6 +226,7 @@ function getCollectionViewOptions() {
       buttonDestination: "modal",
       contents: {
         options: false,
+        price: showPrice,
       },
       text: {
         button: "View product",

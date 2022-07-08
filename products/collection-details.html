@@ -309,6 +309,11 @@
                         <a
                             href="/products/collection-details.html?collectionDetails=eyAiY29sbGVjdGlvbklkIjogNDAyMjA3MTEzNDQzLCAiY29sbGVjdGlvbk5hbWUiOiAiRnJ1aXQgUmFuZ2UgQ29sbGVjdGlvbiJ9">Fruit
                             Range</a><br>
+                        <!-- Bast Sellers -->
+                        <hr>
+                        <a
+                            href="/products/collection-details.html?collectionDetails=eyAiY29sbGVjdGlvbklkIjogNDA1MzczMjIzMTM5LCAiY29sbGVjdGlvbk5hbWUiOiAiQmVzdCBTZWxsZXJzIiwgInNob3dQcmljZSI6IGZhbHNlIH0">Best
+                            Sellers</a><br>
                     </div>
                     <div class="col-md-4">
 
@@ -431,7 +436,7 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Include cookiealert script -->
+    <!-- Include cookie alert script -->
     <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 
     <!-- shopify -->
@@ -440,6 +445,7 @@
         var collectionDetailsHash = getUrlParameter('collectionDetails', document.URL);
         var collectionId;
         var pageTitle;
+        var showPrice = true;
 
         if (collectionDetailsHash === null) {
             collectionId = '404062929123';
@@ -447,8 +453,12 @@
         } else {
             var collectionDetailsJSON = atob(collectionDetailsHash);
             var collectionDetails = JSON.parse(collectionDetailsJSON);
+
             collectionId = collectionDetails.collectionId;
             pageTitle = collectionDetails.collectionName;
+            if (collectionDetails.showPrice !== undefined) {
+                showPrice = collectionDetails.showPrice;
+            }
             // TODO: redirect to 404 page when collectionId is not valid
         }
 

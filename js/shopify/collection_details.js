@@ -24,8 +24,14 @@
 
   function ShopifyBuyInit() {
     var client = buildClient();
+
     ShopifyBuy.UI.onReady(client).then(function (ui) {
-      createCollectionDetailsComponent(ui, collectionElementId, collectionId);
+      createCollectionDetailsComponent(
+        ui,
+        collectionElementId,
+        collectionId,
+        showPrice
+      );
     });
   }
 })();
