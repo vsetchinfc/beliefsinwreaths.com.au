@@ -236,7 +236,22 @@ function getCollectionViewOptions(showPrice) {
           //debugger;
         },
         beforeInit: function (product) {
-          //debugger;
+          Object.defineProperty(product, "isButton", {
+            get: function () {
+              return true;
+            },
+          });
+          Object.defineProperty(product, "options", {
+            get: function () {
+              return this.config[this.typeKey];
+            },
+          });
+          var actualOnButtonClick = product.onButtonClick;
+          product.onButtonClick = function (event, target) {
+            event.stopImmediatePropagation();
+            this.options.buttonDestination = "modal";
+            actualOnButtonClick.call(this, event, target);
+          };
         },
         // addVariantToCart: function (product) {},
         // updateQuantity: function (product) {},
