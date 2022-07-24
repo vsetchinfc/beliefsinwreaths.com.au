@@ -236,6 +236,7 @@ function getCollectionViewOptions(showPrice) {
           //debugger;
         },
         beforeInit: function (product) {
+          // make image clickable
           Object.defineProperty(product, "isButton", {
             get: function () {
               return true;
