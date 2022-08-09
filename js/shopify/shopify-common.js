@@ -87,6 +87,8 @@ function getFullProductViewOptions() {
       events: {
         afterInit: function (product) {
           //debugger;
+          document.title =
+            product.model.title + " | Beliefs in Wreaths Decor Studio";
           // check free delivery threshold
           if (product.selectedVariant.price > 95) {
             var freeDeliveryMessageContainer = document.getElementById(
