@@ -29,7 +29,7 @@
   function ShopifyBuyInit() {
     var client = buildClient();
 
-    var shopifyProductId = atob(productIdHash);
+    var shopifyProductId = productIdHash; // atob(productIdHash);
 
     var productId = shopifyProductId.split("Product/")[1];
 

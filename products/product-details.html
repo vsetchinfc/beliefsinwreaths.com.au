@@ -9,7 +9,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Beliefs in Wreaths Decor Studio</title>
+    <title>Luxury Handcrafted Wreaths and Home Decor | Beliefs in Wreaths Decor Studio</title>
     <meta name="description" content="Beliefs in Wreaths Decor Studio Website">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,6 +21,9 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+    <!-- cookiealert styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
 
     <!-- Fonts -->
     <link rel="stylesheet"
@@ -92,6 +95,16 @@
                 <div class="col-lg-4">
                     <h1>Beliefs in Wreaths<h3>Decor Studio</h3>
                     </h1>
+                    <hr>
+                    <h6 class="nav justify-content-center">
+                        <p>Luxury Handcrafted Wreaths and Home Decor for Any Occasion.</p>
+                        <div class="d-flex">
+                            <div class="mr-1">Made With</div>
+                            L<div class="item-sold">&hearts;</div>VE
+                            <div class="ml-1">In Australia</div>.
+                        </div>
+                    </h6>
+
                 </div>
                 <div class="col-lg-4">
                     <img src="/img/b-in-w-logo.png" alt="" class="img-logo mt-3">
@@ -111,6 +124,7 @@
                             </a>
                         </nav>
                         <a href="mailto:beliefsinwreaths@gmail.com">beliefsinwreaths@gmail.com</a>
+                        <hr>
                         <nav class="nav justify-content-center">
                             <a class="nav-link" target="_blank" href="https://www.facebook.com/BeliefsInWreaths">
                                 <img class="img-pay-badge"
@@ -409,8 +423,10 @@
         <!-- End of Footer Section -->
     </div>
 
+    <!-- cookie-alert -->
+    <div id="cookie-alert-container"></div>
+
     <!-- External JS -->
-    <script src="http://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <script src="/vendor/bootstrap/popper.min.js"></script>
@@ -427,6 +443,7 @@
 
     <!-- Shopify -->
     <script>
+        //debugger;
         var productFreeDeliveryElementId = "product-free-delivery";
         var productElementId = "product-full-details";
         var productIdHash = getUrlParameter('productId', document.URL);

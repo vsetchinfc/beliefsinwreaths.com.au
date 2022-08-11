@@ -104,6 +104,7 @@ function getFullProductViewOptions() {
         // addVariantToCart: function (product) {},
         // updateQuantity: function (product) {},
         openModal: function (product) {
+          //debugger;
           // TIP: uncomment line below to see and product id
           console.log("Product handle: " + product.viewData.id);
           window.location.href = `/products/product-details.html?productId=${product.viewData.id}`;
@@ -239,6 +240,7 @@ function getCollectionViewOptions(showPrice) {
         },
         beforeInit: function (product) {
           // make image clickable
+          //debugger;
           Object.defineProperty(product, "isButton", {
             get: function () {
               return true;
@@ -251,6 +253,7 @@ function getCollectionViewOptions(showPrice) {
           });
           var actualOnButtonClick = product.onButtonClick;
           product.onButtonClick = function (event, target) {
+            //debugger;
             event.stopImmediatePropagation();
             this.options.buttonDestination = "modal";
             actualOnButtonClick.call(this, event, target);
@@ -259,6 +262,7 @@ function getCollectionViewOptions(showPrice) {
         // addVariantToCart: function (product) {},
         // updateQuantity: function (product) {},
         openModal: function (product) {
+          //debugger;
           // TIP: uncomment line below to see and product id
           console.log("Product handle: " + product.viewData.id);
           window.location.href = `/products/product-details.html?productId=${product.viewData.id}`;
